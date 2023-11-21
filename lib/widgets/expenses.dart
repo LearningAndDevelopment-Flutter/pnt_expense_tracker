@@ -32,9 +32,25 @@ class _Expense extends State<Expenses> {
     ),
   ];
 
+  void _addExpense() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => const Text('Show buttom sheet modal'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('PnT Expense Tracker'),
+        actions: [
+          IconButton(
+            onPressed: _addExpense,
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           const Text('The chart...'),
